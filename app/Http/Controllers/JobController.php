@@ -21,7 +21,7 @@ class JobController extends Controller
         // validation
         request()->validate([
             'title' => ['required','min:3'],
-            'salary' => ['required'],
+            'salary' => ['required']
         ]);
 
         Job::create([
