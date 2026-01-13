@@ -5,12 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+/**
+ * @property \App\Models\Employer $employer
+ */
 class Job extends Model
 {
     use HasFactory;
     protected $table = 'job_listings';
 //    protected $fillable = ['title','salary'];
-protected $guarded = [];
+    protected $guarded = [];
     public function employer(){
         return $this->belongsTo(Employer::class);
     }

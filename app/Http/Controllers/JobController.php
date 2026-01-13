@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
-use Illuminate\Http\Request;
 
 class JobController extends Controller
 {
@@ -38,7 +37,6 @@ class JobController extends Controller
         return view('jobs.edit', ['job' => $job]);
     }
     public function update(Job $job){
-        // authorize (on hold)
 
         // validate
         request()->validate([
@@ -47,7 +45,6 @@ class JobController extends Controller
         ]);
 
         // update the job
-        // and persist
         $job->update([
             'title' => request('title'),
             'salary' => request('salary'),
@@ -57,7 +54,6 @@ class JobController extends Controller
         return redirect('/jobs/'.$job->id);
     }
     public function destroy(Job $job){
-        // authorize (on hold)
 
         // delete the record
         $job->delete();
